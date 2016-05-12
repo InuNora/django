@@ -9,6 +9,7 @@ def  server(conn, addr):
         if not data: break
         if data == 'close': break
         conn.send(data)
+    conn.close()
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind(('0.0.0.0', 2222))
@@ -17,4 +18,4 @@ while True:
     conn, addr = s.accept()
     t = threading.Thread(target=server, args=(conn, addr))
     t.start()
-    conn.close()
+    
