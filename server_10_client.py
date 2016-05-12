@@ -13,8 +13,8 @@ def myreceive(sock, msglen):
     
 def  server(conn, addr):
     while True:
-        #data = conn.recv(1024)
-        data = myreceive(s, 1024)
+        data = conn.recv(1024)
+        #data = myreceive(s, 1024)
         if not data: break
         conn.send(data)
 
