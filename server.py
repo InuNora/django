@@ -1,5 +1,6 @@
 import socket
 import asyncore
+import threading
 
 def  server(conn, addr):
     while True:
@@ -14,5 +15,6 @@ s.bind(('0.0.0.0', 2222))
 s.listen(10)
 while True:
     conn, addr = s.accept()
-    server(conn, addr)
+    t = threading.Thread(target=server, args=(conn, addr))
+    t.start()
     conn.close()
