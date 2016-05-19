@@ -1,5 +1,5 @@
 
-def wsgi_application(environ, start_response):
+def application(environ, start_response):
     mas = environ['QUERY_STRING'].split("&")
     body = "\n".join(mas)
     status = '200 OK'
