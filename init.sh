@@ -3,7 +3,7 @@
 mkdir -p /home/box/web/{etc,uploads,public}/
 mkdir -p /home/box/web/public/{img,js,css}/
 
-cp /home/box/stepic/nginx.conf /home/box/web/etc/nginx.conf
+cp /home/box/stepic/nginx.conf.new /home/box/web/etc/nginx.conf
 cp /home/box/stepic/hello.py /home/box/web/hello.py
 cp /home/box/stepic/etc/hello.py /home/box/web/etc/hello.py
 
