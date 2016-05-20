@@ -25,5 +25,5 @@ sudo /etc/init.d/nginx restart
 # gunicorn -c /home/box/web/etc/hello.py -b 0.0.0.0:8000 wsgi:application &
 # gunicorn - b 0.0.0.0:8000 wsgi:application &
 cp /home/box/stepic/gunicorn.ask /home/box/web/etc/gunicorn.ask
-sudo ln -sf /home/box/web/etc/gunicorn.ask /etc/gunicorn.d/ask 
+sudo ln -sf /home/box/web/etc/gunicorn.ask /etc/gunicorn.d/test/gunicorn.conf
 sudo /etc/init.d/gunicorn restart
