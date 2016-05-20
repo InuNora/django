@@ -18,11 +18,11 @@ cp /home/box/stepic/urls.py /home/box/web/ask/qa/urls.py
 sudo ln -sf /home/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/default
 sudo ln -sf /home/box/web/etc/hello.py /etc/gunicorn.d/hello.py
 sudo /etc/init.d/nginx restart
-gunicorn -c /home/box/web/etc/hello.py -b 0.0.0.0:8080 hello:hello_app &
+# gunicorn -c /home/box/web/etc/hello.py -b 0.0.0.0:8080 hello:hello_app &
 # gunicorn - b 0.0.0.0:8080 hello:application &
 
-cd /home/box/web/ask/ask
-gunicorn -c /home/box/web/etc/hello.py -b 0.0.0.0:8000 wsgi:application &
+# cd /home/box/web/ask/ask
+# gunicorn -c /home/box/web/etc/hello.py -b 0.0.0.0:8000 wsgi:application &
 # gunicorn - b 0.0.0.0:8000 wsgi:application &
 
 sudo /etc/init.d/gunicorn restart
