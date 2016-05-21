@@ -9,7 +9,10 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
     
     # url(r'^$', views.test),
-    url(r'^login', qa.views.test),
+    # url(r'^login', qa.views.test),
+    
+    url(r'^login/.∗$','qa.views.test'),
+
     # url(r'^signup', views.test),
     # url(r'^questions/\d+', views.test),
     # url(r'^ask', views.test),
