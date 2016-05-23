@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-apt-get update
-apt-get install mc
-apt-get install mysql-server
-/etc/init.d/mysql start
+/etc/init.d/mysql restart
 
 mysql -u root -e "create user 'ask'@'localhost' identified by 'ask'"
 mysql -u root -e "create database ask default character set=utf8"
