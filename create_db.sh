@@ -1,17 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# run as sudo
+mysql -u root -e "create user 'ask'@'localhost' identified by 'ask'"
+mysql -u root -e "create database ask default character set=utf8"
+mysql -u root -e "grant all privileges on ask. * to 'ask'@'localhost'"
 
-/etc/init.d/mysql start
-mysql -uroot -e "CREATE DATABASE qa; CREATE USER 'qa'@'%' IDENTIFIED BY '123456'; GRANT ALL PRIVILEGES ON qa.* TO 'qa'@'%';"
+python manage.py syncdb
 
-#pip install pymysql
-
-
-#mysql -uroot -e "CREATE DATABASE box_django;"
-#mysql -uroot -e "CREATE USER 'box'@'localhost' IDENTIFIED BY '1234';"
-#mysql -uroot -e "GRANT ALL PRIVILEGES ON box_django.* TO 'box'@'localhost';"
-#mysql -uroot -e "FLUSH PRIVILEGES;"
-
-#mysql -uroot -e "CREATE DATABASE stepic_web;"
-#mysql -uroot -e "GRANT ALL PRIVILEGES ON stepic_web.* TO 'box'@'localhost' WITH GRANT OPTION;"
+mysql -u ask -p ask -e "alter table qa_question modify column added_at date default null"
