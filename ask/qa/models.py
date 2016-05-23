@@ -5,7 +5,14 @@ import datetime
 
 # Create your models here.
 
+class QuestionManager(models.Manager):                                          
+    def new():                                                              
+        pass                                                            
+    def popular():                                                          
+        pass 
+
 class Question(models.Model):
+    objects = QuestionManager()
     title = models.CharField(max_length=50)
     text = models.TextField()
     added_at = models.DateTimeField(auto_now=True)
