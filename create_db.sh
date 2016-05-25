@@ -2,9 +2,9 @@
 
 /etc/init.d/mysql restart
 
-mysql -u root -e "create user 'ask'@'localhost' identified by 'ask'"
+mysql -u root -e "create user 'box'@'localhost' identified by 'ask'"
 mysql -u root -e "create database ask default character set=utf8"
-mysql -u root -e "grant all privileges on ask. * to 'ask'@'localhost'"
+mysql -u root -e "grant all privileges on ask. * to 'box'@'localhost'"
 mysql -uroot -e "FLUSH PRIVILEGES;"
 
 # mysql -uroot -e "CREATE DATABASE djbase;"
