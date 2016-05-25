@@ -18,7 +18,7 @@ class Question(models.Model):
     added_at = models.DateTimeField(auto_now_add=True)
     rating = models.IntegerField(default=0)
     author = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
-    likes = models.ManyToManyField(Userб related_name='likes')
+    likes = models.ManyToManyField(User, related_name='likes')
     def __unicode__(self):              
         return self.title
     class Meta:
