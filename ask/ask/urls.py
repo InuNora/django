@@ -6,5 +6,6 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^login/$', 'views.test'),
     url(r'^ask/.*$', 'qa.views.test'),
+    url(r'^new/$', include('qa.urls')),
     # url(r'^', include('qa.urls')),
 )
