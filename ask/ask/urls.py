@@ -12,4 +12,5 @@ urlpatterns = patterns('',
     # url(r'^popular/$', 'views.test', name='popular'),
     # url(r'^new/$', 'views.test', name='new'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^', include('qa.urls')),
 )
