@@ -4,10 +4,12 @@
 </head>
 <body>
 
-  <h1>Title: {{ question.title }}</h1>
-  <p>Question: {{ question.text }}</p>
+  <h1>Question</h1>
+  <h3>Title: {{ question.title }}</h3>
+  <h3>Text:  {{ question.text }}</h3>
+  <hr>
 
-  <h2>Answers:</h2>
+  <h3>Answers:</h3>
   {% for answer in answers %}
     <p>{{ answer.text }}</p>
   {% endfor %}
